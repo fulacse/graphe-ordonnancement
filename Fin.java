@@ -1,16 +1,17 @@
-public class Fin extends Neux{
+public class Fin extends Node {
 
-    public Fin(){
+    public Fin() {
         super();
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        String s="FIN\nPrecede: ";
-        for(Neux n:precede.toTab()){
-            s+=n.value+"; ";
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("FIN\nPrecede: ");
+
+        for (Node n : precede.toTab()) {
+            s.append(n.value).append("; ");
         }
-        return s+="\nFin du programme: "+this.depareTo;
+        return String.valueOf(s.append("\nFin du programme: ").append(this.depareTo));
     }
 
 }
